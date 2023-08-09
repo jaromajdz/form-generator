@@ -1,0 +1,8 @@
+<div
+  class="dropdown-button"
+  (mouseenter)="mouseEnterHandler()"
+  (mouseleave)="mouseLeaveHandler()"
+>
+  <div class="label">{{ label }}</div>
+  <div [ngClass]="{'arrow': true, 'rotate-45': !hovered,  'rotate-[135deg]': hovered }"></div>
+</div>
