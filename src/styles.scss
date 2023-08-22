@@ -2,3 +2,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+    @apply bg-primary-400 fill-primary-700;
+    background-image: url(./assets/images/1542667853.svg); 
+    background-size: cover;
+    background-position: center -200px;
+    background-repeat: no-repeat;
+    width: 100vw;
+    min-height: 100vh;
+}

@@ -1,0 +1,12 @@
+<ul [ngClass]="{'flex flex-row': depth===0}">
+    <li *ngFor="let item of config">
+                
+            <app-menu-item [url]="item.url" [label]="item.label" *ngIf="!item.menu;else nested"></app-menu-item>
+            <ng-template #nested>
+               <app-dropdown [label]="item.label" [depth]="depth">
+                    <app-menu-generator [config]="item.menu" [depth]="depth + 1"></app-menu-generator>
+               </app-dropdown> 
+                
+            </ng-template>    
+    </li>
+</ul>

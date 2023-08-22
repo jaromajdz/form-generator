@@ -1,1 +1,21 @@
-<p>dropdown works!</p>
+<div
+  class="button"
+  (mouseenter)="mouseEnterHandler()"
+  (mouseleave)="mouseLeaveHandler()"
+  #dropdownButton
+>
+  <div [ngClass]="{'label': true, 'label-hovered': hovered}">{{ label }}</div>
+  
+  <div
+    [ngClass]="{
+      'arrow': true,
+      'rotate-45': !hovered,
+      'rotate-[135deg] arrow-hovered': hovered
+    }"
+  ></div>
+    
+      <div @showDropdown class="dropdown" [style]="{top: top, left: left}" *ngIf="hovered">
+            <ng-content></ng-content>
+    </div>
+    
+  </div>

@@ -1,9 +1,0 @@
-.dropdown-button{
-    @apply relative w-full flex justify-between items-center cursor-pointer p-2;
-    .label{
-        @apply mr-1;
-    }
-    .arrow{
-        @apply w-[8px] h-[8px] border-black border-t border-r transition-all duration-200;
-    }
-}

@@ -4,9 +4,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { MenuComponent } from '../menu/menu.component';
 import { DropdownComponent } from '../menu/dropdown/dropdown.component';
 import { MenuItemComponent } from '../menu/menu-item/menu-item.component';
-import { DropdownButtonComponent } from '../menu/dropdown-button/dropdown-button.component';
-
-
+import { MenuGeneratorComponent } from '../menu/menu-generator/menu-generator.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +12,8 @@ import { DropdownButtonComponent } from '../menu/dropdown-button/dropdown-button
     MenuComponent,
     DropdownComponent,
     MenuItemComponent,
-    DropdownButtonComponent
+    MenuGeneratorComponent,
+  
   ],
   imports: [
     CommonModule
@@ -24,7 +23,8 @@ import { DropdownButtonComponent } from '../menu/dropdown-button/dropdown-button
     MenuComponent,
     DropdownComponent,
     MenuItemComponent,
-    DropdownButtonComponent
+    MenuGeneratorComponent
+    
   ]
 })
 export class ComponentsModule { }
