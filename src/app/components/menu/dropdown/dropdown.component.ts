@@ -39,8 +39,8 @@ export class DropdownComponent {
   }
 
   mouseEnterHandler(){
-    //console.log(this.buttonRef.nativeElement. getBoundingClientRect())
-    //console.log(window.innerWidth)
+    console.log(this.buttonRef.nativeElement. getBoundingClientRect())
+    console.log(window.innerWidth)
     this.top =  `${this.depth>0? 0 : this.buttonRef.nativeElement.offsetHeight}px`
     this.left= `${this.depth>0? this.buttonRef.nativeElement.offsetWidth : 0}px`  
     this.hovered = true
