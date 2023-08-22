@@ -6,7 +6,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./menu-item.component.scss']
 })
 export class MenuItemComponent {
-  @Input()url!: string
+  @Input()url?: string
   @Input()label!: string
+
 
 }
