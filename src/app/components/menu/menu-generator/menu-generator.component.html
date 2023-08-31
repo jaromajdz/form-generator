@@ -1,4 +1,4 @@
-<ul [ngClass]="{'flex flex-row': depth===0}">
+<ul [ngClass]="{'fl': true, 'col': depth>0}">
     <li *ngFor="let item of config">
                 
             <app-menu-item [url]="item.url" [label]="item.label" *ngIf="!item.menu;else nested"></app-menu-item>
