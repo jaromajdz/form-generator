@@ -38,4 +38,14 @@ export const menuConfig = [
             },
         ]
     },
+    {
+      label: "Login",
+      description: '',
+      url: './login'
+    },
+    {
+      label: "Login",
+      description: '',
+      url: './login-reactive'
+    }
 ]
