@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './components/login/login.component';
+import { LoginReactiveComponent } from './components/login-reactive/login-reactive.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path: '', pathMatch: 'full', redirectTo: 'login'},
+  {path: 'login', component: LoginComponent },
+  {path: 'registration', component: LoginReactiveComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
