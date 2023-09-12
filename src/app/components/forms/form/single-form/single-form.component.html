@@ -1,0 +1,23 @@
+<ng-template [ngIf]="fieldConfig">
+   <div> 
+        <label>{{fieldConfig.label}}</label>
+   
+        <ng-container [ngSwitch]="fieldConfig.inputType">            
+    
+            <ng-container *ngSwitchCase="input"> 
+                <ng-container *ngTemplateOutlet="input"></ng-container>
+            </ng-container>
+       
+        </ng-container>
+
+    </div>
+    
+    <ng-template #input>
+        <input 
+        [formControlName]="fieldConfig.fieldName" 
+        [name]="fieldConfig.fieldName"/>
+    </ng-template>
+
+
+
+</ng-template>
