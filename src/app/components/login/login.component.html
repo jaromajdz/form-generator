@@ -1,21 +1,20 @@
-<div class="mx-auto w-[50%]">
-    <form #loginForm="ngForm">
-        <div class="mb-2">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+<form #loginForm="ngForm">
+<div class="form-grid">
+          <label ngClass="block text-red-700 text-sm font-bold mb-2" for="username">
               Username
             </label>
-            <input 
+          <input 
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                id="login" 
+                id="login"  
                 type="text" 
                 placeholder="Username"
                 [(ngModel)]="model.login"
                 name="login"
-                #login = "ngModel"
+              #login = "ngModel"
                 >
-          </div>
-          <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+      
+        
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
               Password
             </label>
             <input 
@@ -25,11 +24,10 @@
                 name="password" 
                 required
                 placeholder="Password"
-                [(ngModel)]="model.login"
+                [(ngModel)]="model.password"
                 #password = "ngModel"
                 >
-          </div>
-          <button type="submit" [ngClass]="{'bg-primary-500 hover:bg-primary-700 text-white font-bold py-2 px-4 rounded': true,
+          <button type="submit" [ngClass]="{'bg-primary-400 hover:bg-primary-700 text-white font-bold py-2 px-4 rounded': true,
                                              'bg-primary-500 hover:bg-primary-500 cursor-not-allowed': !loginForm.form.valid,
                                              'bg-primary-500': loginForm.form.valid}" 
                                               [disabled]="!loginForm.form.valid">Submit</button>
@@ -38,5 +36,6 @@
                                               'bg-primary-500 hover:bg-primary-500 cursor-not-allowed': !loginForm.form.valid,
                                               'bg-primary-500': loginForm.form.valid}" 
                                                [disabled]="!loginForm.form.valid" *ngIf="loginForm.form.valid">Reset</button>
-                                            </form>
+
 </div>
+</form>

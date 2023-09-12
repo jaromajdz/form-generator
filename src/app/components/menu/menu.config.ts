@@ -46,6 +46,6 @@ export const menuConfig = [
     {
       label: "Login",
       description: '',
-      url: './login-reactive'
+      url: './registration'
     }
 ]

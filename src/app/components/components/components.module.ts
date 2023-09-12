@@ -21,7 +21,6 @@ import { CardComponent } from '../card/card.component';
     LoginComponent,
     LoginReactiveComponent,
     CardComponent,
-  
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,9 @@
+.form-grid{
+    @apply grid grid-cols-2 gap-1 w-[50%] mx-auto;
+}
+.input{
+    @apply border-none focus:outline-none rounded-sm;
+}
+.label{
+    @apply block text-red-700 text-sm font-bold mb-2;
+}

@@ -9,10 +9,10 @@
         @apply text-#{$menu-item-hover};
     }
     .arrow{
-        @apply w-[8px] h-[8px] border-#{$menu-item-color} border-t border-r transition-all duration-200;
+        @apply w-[8px] h-[8px] rotate-45 border-#{$menu-item-color} border-t border-r transition-all duration-200;
     }
     .arrow-hovered{
-        @apply border-#{$menu-item-hover};
+        @apply border-#{$menu-item-hover} rotate-[135deg];
     }
     .dropdown{
         @apply absolute flex-col z-50 min-w-[160px]  rounded-md shadow-md  shadow-#{$dropdown-shadow} py-2 pl-2 bg-#{$dropdown-background};
