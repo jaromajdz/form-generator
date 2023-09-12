@@ -7,6 +7,7 @@ export interface menuConfigT{
 
 export enum formFieldControlTypeEnum {
     input = 'input',
+    password = 'password',
     textArea = 'textArea',
     dropdown = 'dropdown',
     autoComplete = 'autocComplete',
@@ -27,8 +28,9 @@ export interface configT {
 export interface formFieldT {
     label: string;
     fieldName: string;
-    controlType: formFieldControlTypeEnum;
-    fieldConfig?: formFieldT['controlType'] extends formFieldControlTypeEnum.dropdown ? dropdownValuesT : never
+    inputType: formFieldControlTypeEnum;
+    fieldConfig?: formFieldT['inputType'] extends formFieldControlTypeEnum.dropdown ? dropdownValuesT : never
+    formGroup?: formFieldT
 }
 
 

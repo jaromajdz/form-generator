@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms'; 
 import { LoginReactiveComponent } from '../login-reactive/login-reactive.component';
 import { CardComponent } from '../card/card.component';
+import { FormComponent } from '../forms/form/form.component';
+import { SingleFormComponent } from '../forms/form/single-form/single-form.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { CardComponent } from '../card/card.component';
     LoginComponent,
     LoginReactiveComponent,
     CardComponent,
+    FormComponent,
+    SingleFormComponent,
   ],
   imports: [
     CommonModule,

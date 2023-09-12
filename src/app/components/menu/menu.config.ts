@@ -44,7 +44,7 @@ export const menuConfig = [
       url: './login'
     },
     {
-      label: "Login",
+      label: "Sign up",
       description: '',
       url: './registration'
     }
