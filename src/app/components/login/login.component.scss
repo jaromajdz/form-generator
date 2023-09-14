@@ -1,9 +1,12 @@
-.form-grid{
-    @apply grid grid-cols-2 gap-1 w-[50%] mx-auto;
+.form-container{
+    @apply m-16 p-4 rounded-md border-primary-contrast-300 border-2 w-[50%] mx-auto bg-primary-200 flex;
+    .form-grid{
+    @apply grid grid-cols-2 gap-1 w-full gap-6;
 }
 .input{
     @apply border-none focus:outline-none rounded-sm;
 }
 .label{
     @apply block text-red-700 text-sm font-bold mb-2;
+}
 }
