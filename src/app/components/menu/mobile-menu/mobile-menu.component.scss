@@ -1,0 +1,4 @@
+@import '../menu.colors.scss';
+.menu_background{
+    @apply bg-#{$menu-background-color};
+}

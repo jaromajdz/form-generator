@@ -1,1 +1,10 @@
-<div><ng-content></ng-content></div>
+
+<div class="invisible md:visible">
+    <app-menu-generator [config]="menuConfig"/>
+</div>
+
+<div class="visible md:invisible absolute left-0 top-0">
+    
+    <app-mobile-menu [config]="menuConfig"></app-mobile-menu>
+
+</div>

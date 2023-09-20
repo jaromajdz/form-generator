@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { formFieldControlTypeEnum } from 'src/app/types/app.types';
+import { formFieldControlTypeEnum, formFieldT, formGroupT } from 'src/app/types/app.types';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -7,6 +8,10 @@ import { formFieldControlTypeEnum } from 'src/app/types/app.types';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent {
+
+  formBuilder: any
+
+  constructor(formBuilder: FormBuilder){}
 
   exampleFormConfig = [
     {
@@ -42,5 +47,15 @@ export class FormComponent {
       ]
     }
   ]
+
+  generateForm(formConfig: formGroupT[]){
+    let form = {}
+    for(let el of formConfig){
+        form = {...form, [el.groupName]: this.formBuilder.group({}) }
+     }
+     
+    
+    }
+
 
 }

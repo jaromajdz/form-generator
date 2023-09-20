@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { menuConfig } from 'src/app/components/menu/menu.config';
+
 
 @Component({
   selector: 'app-header',
@@ -7,5 +7,5 @@ import { menuConfig } from 'src/app/components/menu/menu.config';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  menuConfig = menuConfig
+
 }

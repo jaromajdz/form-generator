@@ -1,0 +1,6 @@
+.show .oi::before{
+    @apply rotate-90;
+}
+.oi::before{
+    @apply transition-all duration-200
+}

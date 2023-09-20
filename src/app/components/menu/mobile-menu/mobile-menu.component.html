@@ -1,0 +1,4 @@
+<app-mobile-menu-button (click)="showMenuHandler()" [show]="show"></app-mobile-menu-button>
+<div class="menu_background p-6 w-[100vw] h-[90vh] z-50 absolute" *ngIf="show" @menuInOut>
+    <app-mobile-menu-generator [config]="config" />
+</div>   

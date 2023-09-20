@@ -12,6 +12,11 @@ import { LoginReactiveComponent } from '../login-reactive/login-reactive.compone
 import { CardComponent } from '../card/card.component';
 import { FormComponent } from '../forms/form/form.component';
 import { SingleFormComponent } from '../forms/form/single-form/single-form.component';
+import { MobileMenuGeneratorComponent } from '../menu/mobile-menu/mobile-menu-generator/mobile-menu.component';
+import { MobileMenuButtonComponent } from '../menu/mobile-menu/mobile-menu-button/mobile-menu-button.component';
+import { MobileMenuComponent } from '../menu/mobile-menu/mobile-menu.component';
+import { MobileSubmenuComponent } from '../menu/mobile-menu/mobile-submenu/mobile-submenu.component';
+import { MenuService } from '../menu/menu.service';
 
 @NgModule({
   declarations: [
@@ -25,12 +30,17 @@ import { SingleFormComponent } from '../forms/form/single-form/single-form.compo
     CardComponent,
     FormComponent,
     SingleFormComponent,
+    MobileMenuGeneratorComponent,
+    MobileMenuButtonComponent,
+    MobileMenuComponent,
+    MobileSubmenuComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule
   ],
+  providers: [MenuService],
   exports: [
     NavbarComponent,
     MenuComponent,
@@ -39,8 +49,11 @@ import { SingleFormComponent } from '../forms/form/single-form/single-form.compo
     MenuGeneratorComponent,
     LoginComponent,
     LoginReactiveComponent,
-    CardComponent
-    
+    CardComponent,
+    MobileMenuGeneratorComponent,
+    MobileMenuButtonComponent,
+    MobileMenuComponent,
+    MobileSubmenuComponent
   ]
 })
 export class ComponentsModule { }

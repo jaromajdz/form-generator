@@ -1,0 +1,15 @@
+<ul [ngStyle]="{'marginLeft.px': 5 * depth}">
+    <li *ngFor="let item of config">
+        
+        <app-menu-item [url]="item.url" [label]="item.label" *ngIf="!item.menu"></app-menu-item>
+        
+        <ng-template [ngIf]="item.menu" >
+            <app-mobile-submenu [label]="item.label" [depth]="depth+1">
+                
+                <app-mobile-menu-generator [config]="item.menu" [depth]="depth + 1"/>
+            
+            </app-mobile-submenu> 
+        </ng-template>    
+    
+    </li>
+</ul>

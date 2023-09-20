@@ -1,0 +1,13 @@
+<div
+  class="button"
+>
+  <div [ngStyle]="{'marginLeft.px': 5 * depth}" class="p-[3px]" (click)="submenuClickHandler()">{{ label }}</div>
+  
+  <div class="arrow"></div>
+</div>   
+      
+<div @submenuInOut  *ngIf="show">
+            <ng-content></ng-content>
+</div>
+    
+  
