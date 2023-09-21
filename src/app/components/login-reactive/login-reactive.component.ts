@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { tap } from 'rxjs';
+import { UserAuthService } from 'src/app/page/userauth.service';
 
 interface errorMessagesT {
   [key: string]: { [key: string]: string };
@@ -31,34 +32,42 @@ export class LoginReactiveComponent implements OnInit {
       email: 'Entered email is not valid',
     },
     password: {
-      required: 'Please type password',
-      minLength: 'The password should containd 8 characters at least',
+      required: 'Please enter the password',
+      minlength: 'The password should containd 8 characters at least',
     },
   };
 
-  formErrors: { [key: string]: string}  = {};
+  formErrors: { [key: string]: string } = {};
 
-  
+  constructor(private _authService: UserAuthService) {}
 
   ngOnInit() {
-    
-  this.registrationForm.valueChanges
+    this.registrationForm.valueChanges
       .pipe(
         tap((form) => {
-            
-            Object.keys(this.registrationForm.controls).forEach((key) => {
-            
+          Object.keys(this.registrationForm.controls).forEach((key) => {
             const controlErrors = this.registrationForm.get(key)?.errors;
-        
-          if(controlErrors && this.registrationForm.get(key)?.dirty){
-              this.formErrors[key] = Object.keys(controlErrors).map(errKey=>(this.errorMessages[key][errKey])).join(',')   
-            }else{
-              this.formErrors[key] = ""
+
+            if (controlErrors && this.registrationForm.get(key)?.dirty) {
+              this.formErrors[key] = Object.keys(controlErrors)
+                .map((errKey) => this.errorMessages[key][errKey])
+                .join(',');
+            } else {
+              this.formErrors[key] = '';
             }
-          
           });
         })
       )
       .subscribe();
+  }
+
+  sendHandler() {
+    if (this.registrationForm.invalid) return;
+    this._authService
+      .singnUp(
+        this.registrationForm.value.email || '',
+        this.registrationForm.value.password || ''
+      )
+      .subscribe(res=>console.log(res), error=>console.log(error));
   }
 }

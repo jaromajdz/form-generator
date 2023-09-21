@@ -28,7 +28,7 @@ export class UserAuthService {
 
   singnUp(email: string, password: string){
 
-    const registerhBody: signInUpDataT = {
+    const registerBody: signInUpDataT = {
       email: email,
       password: password,
       returnSecureToken: true
