@@ -1,0 +1,14 @@
+.messageBox{
+    @apply absolute flex flex-col top-[30vh] left-[30vw] w-[60vh] bg-primary-400  rounded-md border border-primary-900 shadow-md;
+    z-index: 1001;
+    .info{
+        @apply bg-primary-950 rounded-t-md text-primary-contrast-400 px-4 py-2;
+    }
+    .message{
+        @apply flex justify-center items-center min-h-[100px];
+    }
+    .action-area{
+        @apply flex justify-center p-3;
+
+    }
+}

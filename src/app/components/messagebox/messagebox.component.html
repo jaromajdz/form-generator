@@ -1,0 +1,15 @@
+<app-backdrop (close)="closeBoxHandler()" [show]="showBox" />
+<ng-template [ngIf]="showBox">
+    <div class="messageBox">
+    <div class="info">Info</div>
+    <div class="message">
+        <p>{{message}}</p>
+     </div>   
+    
+    <div class="action-area">
+       
+        <button (click)="closeBoxHandler()" class="bg-primary-500 block hover:bg-primary-700 text-white font-bold py-2 px-4 rounded">Ok</button>
+     
+    </div>
+</div> 
+</ng-template>    

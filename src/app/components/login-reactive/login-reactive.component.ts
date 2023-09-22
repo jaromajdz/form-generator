@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {
   FormControl,
@@ -6,7 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { tap } from 'rxjs';
-import { UserAuthService } from 'src/app/page/userauth.service';
+import { UserAuthService } from 'src/app/auth/userauth.service';
 
 interface errorMessagesT {
   [key: string]: { [key: string]: string };
@@ -18,6 +19,10 @@ interface errorMessagesT {
   styleUrls: ['./login-reactive.component.scss'],
 })
 export class LoginReactiveComponent implements OnInit {
+
+  message!: string
+  showMessage = false
+
   registrationForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [
@@ -42,6 +47,7 @@ export class LoginReactiveComponent implements OnInit {
   constructor(private _authService: UserAuthService) {}
 
   ngOnInit() {
+
     this.registrationForm.valueChanges
       .pipe(
         tap((form) => {
@@ -68,6 +74,15 @@ export class LoginReactiveComponent implements OnInit {
         this.registrationForm.value.email || '',
         this.registrationForm.value.password || ''
       )
-      .subscribe(res=>console.log(res), error=>console.log(error));
+      .subscribe(res=>{
+        this.showMessage = true
+        this.message = "You have registered successfully!"
+        console.log(res)
+      },
+        (error: HttpErrorResponse)=>{
+          console.log(error.error.error.message)
+          this.message = "Email problem"
+          this.showMessage = true
+          });
   }
 }

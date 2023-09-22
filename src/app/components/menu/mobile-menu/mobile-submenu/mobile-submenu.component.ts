@@ -30,11 +30,11 @@ export class MobileSubmenuComponent {
 
   private _sub!: Subscription
 
-  private _menuReset: MenuService
+  
 
-  constructor(menuReset: MenuService)
+  constructor(private _menuReset: MenuService)
   {
-    this._menuReset = menuReset
+  
   }
 
 

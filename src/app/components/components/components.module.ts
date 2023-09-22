@@ -17,6 +17,8 @@ import { MobileMenuButtonComponent } from '../menu/mobile-menu/mobile-menu-butto
 import { MobileMenuComponent } from '../menu/mobile-menu/mobile-menu.component';
 import { MobileSubmenuComponent } from '../menu/mobile-menu/mobile-submenu/mobile-submenu.component';
 import { MenuService } from '../menu/menu.service';
+import { BackdropComponent } from '../backdrop/backdrop.component';
+import { MessageboxComponent } from '../messagebox/messagebox.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { MenuService } from '../menu/menu.service';
     MobileMenuButtonComponent,
     MobileMenuComponent,
     MobileSubmenuComponent,
+    BackdropComponent,
+    MessageboxComponent,
   ],
   imports: [
     CommonModule,
