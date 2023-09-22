@@ -16,4 +16,14 @@ body{
     min-height: 100vh;
     border-radius: 0;
     overflow-x: hidden;
+
+    .input{
+        @apply shadow-sm appearance-none border rounded w-full bg-primary-100 py-2 px-3 text-gray-700 leading-tight focus:outline-primary-contrast-400;
+        
+    }
+    
+    .ng-dirty .ng-invalid{
+        @apply focus:outline-red-500;
+    }
 }
+

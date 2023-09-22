@@ -4,7 +4,7 @@
   (mouseleave)="mouseLeaveHandler()"
   #dropdownButton
 >
-  <div [ngClass]="{'label': true, 'label-hovered': hovered}">{{ label }}</div>
+  <div [ngClass]="{'label': true, 'label-hovered': hovered}">{{ 'menu.' + label | translate: locale.language }}</div>
   
   <div
     [ngClass]="{

@@ -1,50 +1,50 @@
 export const menuConfig = [
     {
-        label: 'Home',
+        label: 'home',
         description: '',
         url: "#"
     },
     {
-        label: 'About Me',
+        label: 'aboutme',
         description: '',
         url: "#"
     },
     {
-        label: 'Other',
+        label: 'other',
         description: '',
         url: "#",
         menu: [
                {
-                label: 'New item',
+                label: 'newitem',
                 description: 'some description',
                 url: '#',
                 menu: [
                       {
-                        label: 'New item',
+                        label: 'newitem',
                         description: 'some description',
                         url: '#',
                       },  
                       {
-                        label: 'Old item',
+                        label: 'olditem',
                         description: 'some description',
                         url: '#',
                       },
                     ]
             },           
                {
-                label: 'New item',
+                label: 'newitem',
                 description: 'some description',
                 url: '#'
             },
         ]
     },
     {
-      label: "Login",
+      label: "login",
       description: '',
       url: './login'
     },
     {
-      label: "Sign up",
+      label: "signup",
       description: '',
       url: './registration'
     }

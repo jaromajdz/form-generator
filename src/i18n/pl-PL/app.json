@@ -1,0 +1,11 @@
+{
+    "menu": {
+        "home": "Główna",
+        "aboutme": "O mnie",
+        "other": "Inne",
+        "newitem": "Nowy wpis",
+        "login": "Logowanie",
+        "signup": "Rejestracja",
+        "olditem": "Stary wpis"
+    }
+}

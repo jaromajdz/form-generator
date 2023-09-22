@@ -3,12 +3,12 @@
   class="sm:w-[50%] w-full bg-primary-300 pb-4 px-8 mx-auto my-auto rounded-md shadow-lg border-primary-700 border-2"
 >
   <form [formGroup]="registrationForm">
-    <div class="grid grid-cols-2 pt-4">
+    <div class="flex flex-col sm:grid sm:grid-cols-2 pt-4 ">
       <label class="text-primary-700" for="email">E-mail: </label>
 
       <div class="flex flex-col">
         <input
-          class="shadow appearance-none border rounded w-full bg-primary-100 py-2 px-3 text-gray-700 leading-tight focus:outline-primary-contrast-400 focus:shadow-outline"
+          class="input"
           id="email"
           placeholder="E-mail"
           formControlName="email"
@@ -22,12 +22,12 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-2 pt-4">
+    <div class="flex flex-col sm:grid sm:grid-cols-2 pt-4 ">
       <label class="text-primary-700" for="password">Password: </label>
 
       <div class="flex flex-col">
         <input
-          class="shadow appearance-none border bg-primary-100 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-primary-contrast-400 focus:shadow-outline"
+          class="input"
           id="password"
           placeholder="Password"
           formControlName="password"
@@ -45,7 +45,7 @@
   <button
     type="submit"
     [ngClass]="{
-      'bg-primary-400 hover:bg-primary-700 text-white font-bold py-2 px-4 rounded': true,
+      'bg-primary-400 hover:bg-primary-700 text-white font-bold py-2 px-4 m-2 rounded': true,
       'bg-primary-400 hover:bg-primary-700 cursor-not-allowed':
         !registrationForm.valid,
       'bg-primary-600 hover:bg-primary-700': registrationForm.valid

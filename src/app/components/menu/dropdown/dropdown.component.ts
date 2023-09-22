@@ -1,5 +1,6 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild, inject } from '@angular/core';
 import { trigger, state, style, animate, transition} from '@angular/animations';
+import { L10N_LOCALE } from 'angular-l10n';
 
 @Component({
   selector: 'app-dropdown',
@@ -19,6 +20,8 @@ import { trigger, state, style, animate, transition} from '@angular/animations';
 ]
 })
 export class DropdownComponent {
+
+  locale = inject(L10N_LOCALE);
 
   @ViewChild('dropdownButton')buttonRef!: ElementRef
   

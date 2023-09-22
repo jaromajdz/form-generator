@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PageModule } from './page/page/page.module';
 import { ComponentsModule } from './components/components/components.module';
+import { L10nIntlModule, L10nTranslatePipe, L10nTranslationModule } from 'angular-l10n';
+import { TranslationLoader, l10nConfig } from './l10n.config';
 
 
 @NgModule({
@@ -17,6 +19,14 @@ import { ComponentsModule } from './components/components/components.module';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    L10nTranslationModule.forRoot(
+      l10nConfig,
+      {
+        translationLoader: TranslationLoader
+      }
+    ),
+    L10nIntlModule,
+    L10nTranslatePipe,
     PageModule,
     ComponentsModule
   ],

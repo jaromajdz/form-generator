@@ -1,0 +1,11 @@
+{
+    "memu": {
+        "home": "Home",
+        "aboutme": "About me",
+        "other": "Other",
+        "newitem": "New item",
+        "login": "Login",
+        "signup": "Sign up",
+        "olditem": "Old item"
+    }
+}

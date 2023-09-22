@@ -19,6 +19,8 @@ import { MobileSubmenuComponent } from '../menu/mobile-menu/mobile-submenu/mobil
 import { MenuService } from '../menu/menu.service';
 import { BackdropComponent } from '../backdrop/backdrop.component';
 import { MessageboxComponent } from '../messagebox/messagebox.component';
+import { L10nTranslatePipe, L10nTranslationModule } from 'angular-l10n';
+
 
 @NgModule({
   declarations: [
@@ -37,12 +39,14 @@ import { MessageboxComponent } from '../messagebox/messagebox.component';
     MobileMenuComponent,
     MobileSubmenuComponent,
     BackdropComponent,
-    MessageboxComponent,
-  ],
+    MessageboxComponent
+    
+   ],
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    L10nTranslatePipe
   ],
   providers: [MenuService],
   exports: [
