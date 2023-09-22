@@ -4,7 +4,7 @@ import { signInResponseT, signInUpDataT, singnUpResponseT } from '../types/app.t
 import { Subject, tap } from 'rxjs';
 import { User } from './uder.model';
 
-
+const API_KEY = 'AIzaSyBLgMaypwbtdnxYclS_B_Pu5tPCvH_r57M'
 
 @Injectable({
   providedIn: 'root'
