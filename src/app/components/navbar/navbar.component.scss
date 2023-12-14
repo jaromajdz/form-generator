@@ -1,4 +1,4 @@
 @import '../menu/menu.colors.scss';
 .navbar{
-    @apply w-full flex  justify-center border-b-primary-contrast-400 border-b-2 py-4 uppercase bg-#{$menu-background-color} text-#{$menu-item-color};
+    @apply w-full flex  justify-center border-b-primary-contrast-200 border-b-2 py-4 uppercase bg-#{$menu-background-color} text-#{$menu-item-color};
 }

@@ -6,6 +6,7 @@ import {
   ValidationErrors,
   Validators,
 } from '@angular/forms';
+import {  Router } from '@angular/router';
 import { tap } from 'rxjs';
 import { UserAuthService } from 'src/app/auth/userauth.service';
 
@@ -22,6 +23,8 @@ export class LoginReactiveComponent implements OnInit {
 
   message!: string
   showMessage = false
+  isLogin = true
+  formTitle = "Login"
 
   registrationForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -44,9 +47,15 @@ export class LoginReactiveComponent implements OnInit {
 
   formErrors: { [key: string]: string } = {};
 
-  constructor(private _authService: UserAuthService) {}
+  constructor(private _authService: UserAuthService, private _router: Router) {}
 
   ngOnInit() {
+
+    if(this._router.url === "/registration")
+      {
+        this.formTitle = "Registration" 
+        this.isLogin = false
+      } 
 
     this.registrationForm.valueChanges
       .pipe(
@@ -69,20 +78,23 @@ export class LoginReactiveComponent implements OnInit {
 
   sendHandler() {
     if (this.registrationForm.invalid) return;
-    this._authService
-      .singnUp(
-        this.registrationForm.value.email || '',
-        this.registrationForm.value.password || ''
-      )
-      .subscribe(res=>{
-        this.showMessage = true
-        this.message = "You have registered successfully!"
-        console.log(res)
-      },
-        (error: HttpErrorResponse)=>{
-          console.log(error.error.error.message)
-          this.message = "Email problem"
+
+     const whereToSend =  this.isLogin? "signIn" : "signUp" 
+
+     this._authService
+        [whereToSend](
+          this.registrationForm.value.email || '',
+          this.registrationForm.value.password || ''
+        )
+        .subscribe(res=>{
           this.showMessage = true
-          });
-  }
+          this.message = `You have ${this.isLogin? "logged in" : "registered"} successfully!`
+          console.log(res)
+        },
+          (error: HttpErrorResponse)=>{
+            console.log(error.error.error.message)
+            this.message = "Email or password problem"
+            this.showMessage = true
+            });
+    }
 }

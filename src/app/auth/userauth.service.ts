@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { signInResponseT, signInUpDataT, singnUpResponseT } from '../types/app.types';
+import { ISignInUpData, ISignUpInResponse  } from '../types/app.types';
 import { Subject, tap } from 'rxjs';
-import { User } from './uder.model';
+import { User } from './user.model';
 
-const API_KEY = ''
+const API_KEY = 'AIzaSyBLgMaypwbtdnxYclS_B_Pu5tPCvH_r57M'
 
 @Injectable({
   providedIn: 'root'
@@ -21,13 +21,13 @@ export class UserAuthService {
 
   signIn(email: string, password: string){
     
-    const authBody: signInUpDataT = {
+    const authBody: ISignInUpData = {
       email: email,
       password: password,
       returnSecureToken: true
     }
     
-    return this._httpClient.post<signInResponseT>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + API_KEY, authBody)
+    return this._httpClient.post<ISignUpInResponse>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + API_KEY, authBody)
       .pipe(
         tap(authResponse=>{
          this.authHandler(
@@ -42,15 +42,15 @@ export class UserAuthService {
       )
   }
 
-  singnUp(email: string, password: string){
+  signUp(email: string, password: string){
 
-    const registerBody: signInUpDataT = {
+    const registerBody: ISignInUpData = {
       email: email,
       password: password,
       returnSecureToken: true
     }
 
-      return this._httpClient.post<singnUpResponseT>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + API_KEY, registerBody)
+      return this._httpClient.post<ISignUpInResponse>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + API_KEY, registerBody)
                   .pipe(
                     tap(authResponse=>{
                       this.authHandler(

@@ -5,7 +5,7 @@ import { LoginReactiveComponent } from './components/login-reactive/login-reacti
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'login'},
-  {path: 'login', component: LoginComponent },
+  {path: 'login', component: LoginReactiveComponent  },
   {path: 'registration', component: LoginReactiveComponent}
 ];
 

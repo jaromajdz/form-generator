@@ -40,25 +40,20 @@ export interface formFieldT {
   formGroup?: formFieldT;
 }
 
-export interface signInUpDataT {
+export interface ISignInUpData {
   email: string;
   password: string;
   returnSecureToken: boolean;
 }
 
-export interface signInResponseT {
-  idToken: string;
+export interface ISignUpInResponse {
+  displayName: string;
   email: string;
-  refreshToken: string;
   expiresIn: string;
   localId: string;
+  idToken: string;
+  refreshToken: string;
+  kind: string;
   registered: boolean;
 }
 
-export interface singnUpResponseT {
-  idToken: string;
-  email: string;
-  refreshToken: string;
-  expiresIn: string;
-  localId: string;
-}
