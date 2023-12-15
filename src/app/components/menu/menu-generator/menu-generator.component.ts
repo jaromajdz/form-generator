@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { menuConfig } from '../menu.config';
-import { menuConfigT } from 'src/app/types/app.types';
+import { IMenuConfig, menuConfigT } from 'src/app/types/app.types';
 
 @Component({
   selector: 'app-menu-generator',
@@ -9,7 +9,7 @@ import { menuConfigT } from 'src/app/types/app.types';
 })
 export class MenuGeneratorComponent {
   
-  @Input()config!: menuConfigT[] | undefined
+  @Input()config!: IMenuConfig[] | undefined
   @Input()depth = 0;
 
 }

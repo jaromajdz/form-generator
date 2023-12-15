@@ -57,3 +57,10 @@ export interface ISignUpInResponse {
   registered: boolean;
 }
 
+export interface IMenuConfig {
+      label: string;
+      description: string;
+      url: string;
+      showLoggedUser?: 'none' | 'yes' | 'always'
+      menu?: IMenuConfig[]
+    }

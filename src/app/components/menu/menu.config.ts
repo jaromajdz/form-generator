@@ -1,4 +1,6 @@
-export const menuConfig = [
+import { IMenuConfig } from "src/app/types/app.types";
+
+export const menuConfig: IMenuConfig[] = [
     {
         label: 'home',
         description: '',
@@ -41,11 +43,19 @@ export const menuConfig = [
     {
       label: "login",
       description: '',
-      url: './login'
+      url: './login',
+      showLoggedUser: 'none'
+    },
+    {
+      label: "logout",
+      description: '',
+      url: './login',
+      showLoggedUser: 'yes'
     },
     {
       label: "signup",
       description: '',
-      url: './registration'
+      url: './registration',
+      showLoggedUser: "none"
     }
 ]

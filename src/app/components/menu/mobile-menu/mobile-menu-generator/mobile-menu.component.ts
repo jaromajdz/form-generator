@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { menuConfigT } from 'src/app/types/app.types';
+import { IMenuConfig, menuConfigT } from 'src/app/types/app.types';
 
 @Component({
   selector: 'app-mobile-menu-generator',
@@ -8,7 +8,7 @@ import { menuConfigT } from 'src/app/types/app.types';
 })
 export class MobileMenuGeneratorComponent {
 
-  @Input()config!: menuConfigT[]
+  @Input()config!: IMenuConfig[] | undefined
   @Input()depth = 0
   @Input()show = true
 }
